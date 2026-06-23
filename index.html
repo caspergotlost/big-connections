@@ -7,19 +7,44 @@
     <title>2025</title>
     <style>
         body {
-            background-color: rgb(199, 199, 199); /* Or #fff or #ffffff */
-            font-family:sans-serif
+            /*background-color: lavenderblush;  Or #fff or #ffffff */
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
         }
-        
+        h1 {text-align: center;
+            background-color: lightcoral;}
 
     </style>
     <body>
         
         <div class="floating">
-        <h1> Welcome to the oversized connections list! Choose your game, download and upload game data, and change lighting mode below. </h1>
+        <h1> Welcome to Oversized Connections!</h1>
+        
+        <button type="button" id="colormode" style="" enabled onclick="themetoggle()">Toggle Site Theme</button>
+
+        </div>
+
+
         <!-- Score: <span id="score">0</span> &nbsp; Mistakes: <span id="mistakes">0</span> &nbsp;
             <button type="button" id="deselect" style="" disabled onclick="deselect()">Deselect</button> -->
-        </div>
+        
         <div style="padding-top: 16px; position: absolute" id="board"></div>
 
     </body>
+    <script>
+        function setcolor() {
+            if (localStorage.getItem("theme") === "dark"){
+                document.body.style.backgroundColor = "rgb(41, 37, 37)";
+            } else {
+                document.body.style.backgroundColor = "rgb(255, 240, 245)";
+            }
+        }
+        function themetoggle() {
+            if (localStorage.getItem("theme") === "dark"){
+                localStorage.setItem("theme", "light");
+            } else {
+                localStorage.setItem("theme", "dark");
+            }
+            setcolor();
+        }
+        setcolor();
+    </script>
