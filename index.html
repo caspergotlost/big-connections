@@ -6,21 +6,38 @@
     <!-- See https://creativecommons.org/licenses/by-sa/4.0/ -->
     <title>2025</title>
     <style>
+
+        :root {
+            --bgColor: rgb(255, 240, 245);
+            --accentColor1: rgb(240, 128, 128);
+            --textColor: rgb(0,0,0);
+        }
+
         body {
             /*background-color: lavenderblush;  Or #fff or #ffffff */
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bgColor);
         }
-        h1 {text-align: center}
+        h1 {text-align: center;
+            background-color: var(--accentColor1);
+        }
 
-            
+        button {
+            border: none;
+            border-radius: 3px;
+            background-color: var(--accentColor1);
+        }
 
     </style>
     <body>
         
         <div class="floating">
-        <h1 id="banner"> Welcome to Oversized Connections!</h1>
+        <h1> Welcome to Oversized Connections!</h1>
         
-        <button type="button" id="colormode"  enabled onclick="themetoggle()">Toggle Site Theme</button>
+        <button type="button" id="colormode" style="" enabled onclick="themetoggle()">Toggle Site Theme</button>
+
+        <h3>Games </h3>
+        <button type="button" id="originalGame" enabled onclick="window.location.href = 'test_version.html'"> Original</button>
 
         </div>
 
@@ -32,16 +49,17 @@
 
     </body>
     <script>
+        const bgColorDark = "rgb(41, 37, 37)";
+        const bgColorLight = "rgb(255, 240, 245)";
+        const accentColorDark1 = "#874141";
+        const accentColorLight1 = "rgb(240, 128, 128)";
         function setcolor() {
             if (localStorage.getItem("theme") === "dark"){
-                document.body.style.backgroundColor = "rgb(41, 37, 37)";
-                document.getElementById("banner").style.backgroundColor = "#874141";
-                document.getElementById("colormode").style.backgroundColor = "#874141";
-
+                document.documentElement.style.setProperty('--bgColor', bgColorDark);
+                document.documentElement.style.setProperty('--accentColor1', accentColorDark1);
             } else {
-                document.body.style.backgroundColor = "rgb(255, 240, 245)";
-                document.getElementById("banner").style.backgroundColor = "rgb(240, 128, 128)";
-                document.getElementById("colormode").style.backgroundColor = "rgb(240, 128, 128)";
+                document.documentElement.style.setProperty('--bgColor', bgColorLight);
+                document.documentElement.style.setProperty('--accentColor1', accentColorLight1);
             }
         }
         function themetoggle() {
