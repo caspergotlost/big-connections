@@ -1,0 +1,1 @@
+Heavily inspired by the [2025 Connections game](https://thomaswc.com/2025.html) at [thomaswc.com](thomaswc.com), I wanted to practice making an interactive site from scratch, so I could make my own variations on size and categories.
